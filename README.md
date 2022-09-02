@@ -1,4 +1,3 @@
-![GitHub all releases](https://img.shields.io/github/downloads/unikuma/f2ft/total)
 # f2ft
 YMM4から出力されるexoファイルの縁取りエフェクトをAviUtlスクリプトの縁取りTに置換するプログラム<br>
 YMM4のプレビューでは綺麗なのにAviUtlだとカクカクなのやだよね。じゃあ変換しようね。って色々やってたらなんかできた。<br>

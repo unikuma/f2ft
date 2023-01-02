@@ -48,8 +48,8 @@ namespace f2ft
 			this.ChkHrgnSmall = new System.Windows.Forms.CheckBox();
 			this.GroupBox1 = new System.Windows.Forms.GroupBox();
 			this.FlowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-			this.RdoDefault = new System.Windows.Forms.RadioButton();
-			this.RdoHighPresicion = new System.Windows.Forms.RadioButton();
+			this.RdoFutidoriT = new System.Windows.Forms.RadioButton();
+			this.RdoHighPrecision = new System.Windows.Forms.RadioButton();
 			this.RdoNmrkf = new System.Windows.Forms.RadioButton();
 			this.InfoPage = new System.Windows.Forms.TabPage();
 			this.TableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -128,6 +128,7 @@ namespace f2ft
 			this.BtnRun.TabIndex = 1;
 			this.BtnRun.Text = "実行";
 			this.BtnRun.UseVisualStyleBackColor = true;
+			this.BtnRun.Click += new System.EventHandler(this.BtnRun_Click);
 			// 
 			// Panel1
 			// 
@@ -142,6 +143,7 @@ namespace f2ft
 			// 
 			// LstExoFiles
 			// 
+			this.LstExoFiles.AllowDrop = true;
 			this.LstExoFiles.ContextMenuStrip = this.ContextMenuStrip1;
 			this.LstExoFiles.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.LstExoFiles.FormattingEnabled = true;
@@ -151,6 +153,8 @@ namespace f2ft
 			this.LstExoFiles.Name = "LstExoFiles";
 			this.LstExoFiles.Size = new System.Drawing.Size(307, 230);
 			this.LstExoFiles.TabIndex = 1;
+			this.LstExoFiles.DragDrop += new System.Windows.Forms.DragEventHandler(this.LstExoFiles_DragDrop);
+			this.LstExoFiles.DragEnter += new System.Windows.Forms.DragEventHandler(this.LstExoFiles_DragEnter);
 			// 
 			// ContextMenuStrip1
 			// 
@@ -256,8 +260,8 @@ namespace f2ft
 			// 
 			// FlowLayoutPanel1
 			// 
-			this.FlowLayoutPanel1.Controls.Add(this.RdoDefault);
-			this.FlowLayoutPanel1.Controls.Add(this.RdoHighPresicion);
+			this.FlowLayoutPanel1.Controls.Add(this.RdoFutidoriT);
+			this.FlowLayoutPanel1.Controls.Add(this.RdoHighPrecision);
 			this.FlowLayoutPanel1.Controls.Add(this.RdoNmrkf);
 			this.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.FlowLayoutPanel1.Location = new System.Drawing.Point(3, 21);
@@ -267,27 +271,27 @@ namespace f2ft
 			this.FlowLayoutPanel1.Size = new System.Drawing.Size(301, 76);
 			this.FlowLayoutPanel1.TabIndex = 0;
 			// 
-			// RdoDefault
+			// RdoFutidoriT
 			// 
-			this.RdoDefault.AutoSize = true;
-			this.RdoDefault.Checked = true;
-			this.RdoDefault.Location = new System.Drawing.Point(13, 3);
-			this.RdoDefault.Name = "RdoDefault";
-			this.RdoDefault.Size = new System.Drawing.Size(72, 23);
-			this.RdoDefault.TabIndex = 0;
-			this.RdoDefault.TabStop = true;
-			this.RdoDefault.Text = "縁取りT";
-			this.RdoDefault.UseVisualStyleBackColor = true;
+			this.RdoFutidoriT.AutoSize = true;
+			this.RdoFutidoriT.Checked = true;
+			this.RdoFutidoriT.Location = new System.Drawing.Point(13, 3);
+			this.RdoFutidoriT.Name = "RdoFutidoriT";
+			this.RdoFutidoriT.Size = new System.Drawing.Size(72, 23);
+			this.RdoFutidoriT.TabIndex = 0;
+			this.RdoFutidoriT.TabStop = true;
+			this.RdoFutidoriT.Text = "縁取りT";
+			this.RdoFutidoriT.UseVisualStyleBackColor = true;
 			// 
-			// RdoHighPresicion
+			// RdoHighPrecision
 			// 
-			this.RdoHighPresicion.AutoSize = true;
-			this.RdoHighPresicion.Location = new System.Drawing.Point(91, 3);
-			this.RdoHighPresicion.Name = "RdoHighPresicion";
-			this.RdoHighPresicion.Size = new System.Drawing.Size(142, 23);
-			this.RdoHighPresicion.TabIndex = 1;
-			this.RdoHighPresicion.Text = "縁取りT（高精度）";
-			this.RdoHighPresicion.UseVisualStyleBackColor = true;
+			this.RdoHighPrecision.AutoSize = true;
+			this.RdoHighPrecision.Location = new System.Drawing.Point(91, 3);
+			this.RdoHighPrecision.Name = "RdoHighPrecision";
+			this.RdoHighPrecision.Size = new System.Drawing.Size(142, 23);
+			this.RdoHighPrecision.TabIndex = 1;
+			this.RdoHighPrecision.Text = "縁取りT（高精度）";
+			this.RdoHighPrecision.UseVisualStyleBackColor = true;
 			// 
 			// RdoNmrkf
 			// 
@@ -446,8 +450,8 @@ namespace f2ft
 		private System.Windows.Forms.GroupBox GroupBox2;
 		private System.Windows.Forms.GroupBox GroupBox1;
 		private System.Windows.Forms.FlowLayoutPanel FlowLayoutPanel1;
-		private System.Windows.Forms.RadioButton RdoDefault;
-		private System.Windows.Forms.RadioButton RdoHighPresicion;
+		private System.Windows.Forms.RadioButton RdoFutidoriT;
+		private System.Windows.Forms.RadioButton RdoHighPrecision;
 		private System.Windows.Forms.RadioButton RdoNmrkf;
 		private System.Windows.Forms.Panel Panel1;
 		private System.Windows.Forms.ListBox LstExoFiles;
